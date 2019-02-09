@@ -1,0 +1,313 @@
+/* Importing Font Family  */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+/* Welcome To Our Website */
+.w_t_e {
+    background: #fa9119;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    color: #fff;
+    padding: .8rem;
+    z-index: 9999999999;
+    -webkit-box-shadow: 1px 3px 10px -2px rgba(0,0,0,0.35);
+    -moz-box-shadow: 1px 3px 10px -2px rgba(0,0,0,0.35);
+    box-shadow: 1px 3px 10px -2px rgba(0,0,0,0.35);
+    transition: all .3s ease;
+}
+
+.h_cw {
+    transform: translateX(-300px);
+}
+
+.w_t_e p {
+    color: #fff;
+}
+
+
+
+.c_w_t_e {
+    font-family: 'Open Sans', sans-serif;
+    position: absolute;
+    right: -25px;
+    top: -10px;
+    background: #111e30;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+/* Sign Up */
+.sign_up,
+.sign_in {
+    margin-top: 170px;
+    /* display: flex;
+    font-family: inherit; */
+}
+
+.btn_bg {
+    background: #142236;
+}
+
+.su_f {
+    margin-top: 170px;
+}
+
+.contct {
+    margin-top: 200px;
+}
+
+.c_form  form label {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.c_form  form input::placeholder {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.c_form  form input,
+.c_form form textarea {
+    border: 1px dashed #142236;
+    border-radius: 0;
+    margin: .5rem 0;
+}
+
+.ct_add_box {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.ct_add_box .add_box {
+    margin-bottom: 2rem;
+    background: #fa9119;
+    padding: 1rem;
+    color: #fff;
+    border-bottom-right-radius: 60px;
+    border-top-right-radius: 60px;
+    position: relative;
+}
+
+.add_box::before {
+    content: '';
+    background: #000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-bottom-right-radius: 60px;
+    border-top-right-radius: 60px;
+    transform: rotate(.5deg);
+    transform-origin: top left;
+    opacity: .4;
+    filter: blur(1px);
+}
+
+.add_box p {
+    color: #000;
+}
+
+.add_box:hover .ic_b::before {
+    transform: translateY(0px);
+}
+
+
+.add_box:hover .ic_b {
+        -webkit-box-shadow: 1px 3px 10px -2px rgba(0,0,0,0.35);
+-moz-box-shadow: 1px 3px 10px -2px rgba(0,0,0,0.35);
+box-shadow: 1px 3px 10px -2px rgba(0,0,0,0.35);
+}
+
+.ic_b {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #142236;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    /* -webkit-box-shadow: 1px 1px 10px -2px rgba(0,0,0,0.35);
+-moz-box-shadow: 1px 1px 10px -2px rgba(0,0,0,0.35);
+box-shadow: 1px 1px 10px -2px rgba(0,0,0,0.35); */
+overflow: hidden;
+}
+.ic_b i {
+    z-index: 99;
+    position: relative;
+}
+
+.ic_b::before {
+content: '';
+background: #ffc116;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 1;
+position: absolute;
+transform: translateY(-100px);
+transition: all .3s ease;
+}
+
+.ct_add_box .add_box .add_box_t {
+    margin-bottom: .7rem;
+}
+
+.ct_add_box .add_box a {
+    color: #fff;
+    background: #142236;
+    padding: .5rem;
+}
+
+/* About US */
+.abt_us {
+    padding-top: 175px;
+    background: #111e30;
+    padding-bottom: 30px;
+}
+.abt_us .t {
+    border-bottom: 2px solid #fff;
+    padding: .5rem 0;
+}
+
+.abt_us p {
+    margin: .8rem 0;
+}
+/* End Of About US */
+
+#su_f label{
+ margin-bottom: .5rem;
+}
+
+.plans {
+    margin-top: 200px;
+    
+    /* display: flex; */
+    font-family: 'Open Sans', sans-serif;
+}
+
+.plans_box {
+    background: #142236;
+    color: white;
+    text-align: center;
+}
+
+.plans_box  .table th {
+    color:  #fa9119;
+}
+
+.t_c_condition {
+    text-align: center;
+}
+
+.t_c_condition ul li {
+    padding: .7rem 0;
+}
+
+.t_c_condition ul li::before, 
+.t_c_condition ul li::after {
+    content: '*';
+}
+
+#form_ {
+    /* display: flex; */
+    /* position: relative !important; */
+}
+
+#form_ label {
+    display: block;
+    
+}
+
+.f_s_i {
+
+    border: none;
+    border-bottom: 1px solid #142236;
+    display: block;
+    /* background: #fa9119; */
+    width: 100%;
+    padding: .8rem;
+    position: relative;
+}
+
+.f_s_i:focus {
+    background: whitesmoke;
+    outline: none;
+    border-left: 1px solid #142236;
+}
+
+
+.sign_in_box a p {
+    color: #142236;
+}
+
+.t_c_box,
+.sp_id {
+    display: flex;
+    margin-top: 15px;
+}
+
+.t_c_box label,
+.sp_id label {
+    margin-right: 10px;
+}
+
+
+
+.v_fallback {
+    display: none;
+}
+
+/* End Of Sign up */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* All Medias */
+@media (max-width: 1000px) {
+    .sign_up {
+    margin-top: 100px;
+    /* display: flex;
+    font-family: inherit; */
+    text-align:center;
+}
+
+.v_fallback img {
+    width: 100%;
+}
+
+@media (max-width: 400px) {
+    .v_fallback {
+        display: block;
+    }
+
+    .v_fallback img {
+        margin-top: 3.5rem;
+    }
+
+
+
+    #myVideo {
+        display: none;
+    }
+}

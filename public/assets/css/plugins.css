@@ -1,0 +1,50 @@
+/* ============================================================
+
+	Theme Name: Pichaora
+	Theme URI: http://
+	Description: The Pichaora Onepage Template
+	Author: App Landing Page
+	Author URI: http://themeforest.net
+	Version: 1.0 
+
+============================================================== */
+
+/* =============================================================
+			[ All Css Plugins & Helper Classes File ]
+================================================================*/
+ 
+/* == fontawesome == */
+@import url("plugins/fontawesome-all.css");
+
+/* == normalize == */
+@import url("plugins/normalize.css");
+
+/* == bootstrap == */
+@import url("plugins/bootstrap.min.css");
+
+/* == magnific popup == */
+@import url("plugins/magnific-popup.css");
+
+/* == swiper carousel == */
+@import url("plugins/owl.carousel.min.css"); 
+@import url("plugins/owl.theme.default.min.css"); 
+
+/* == animate Headline == */
+@import url("plugins/animate.min.css");  
+
+/* == Loader == */
+@import url("plugins/Loader.css");  
+
+/* == accordion == */
+@import url("plugins/reset-style.css");
+
+/* == hover navbar == */
+@import url("plugins/bootstrap-4-hover-navbar.css");  
+
+/* == hover == */
+@import url("plugins/hover-min.css");  
+
+/* == helper classes == */
+@import url("plugins/helper.css");
+
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900|Open+Sans:400,600,700")
