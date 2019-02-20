@@ -106,6 +106,8 @@ $(function() {
  
 $(document).ready(function() {
 
+
+
     var owl = $('.header .owl-carousel'); 
     // Slider owlCarousel
     $('.fullslider').owlCarousel({
@@ -138,3 +140,16 @@ $(document).ready(function() {
 
 });
 	 
+
+// Accordion 
+$(document).ready(function(){
+	var action = 'click';
+	var speed = '500';
+
+	$('li.faq_title').on(action, function(){
+		$(this).next().slideToggle(speed).siblings('li.faq_body').slideUp();
+		var ic = $(this).children('i');
+		$(ic).not(ic).removeClass('rot');
+		ic.toggleClass('rot');
+	});
+});

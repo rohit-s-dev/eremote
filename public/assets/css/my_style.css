@@ -2,6 +2,72 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 
+/* ====================================================
+		========>> [  Start Faq ] <<========	
+====================================================== */
+.faq {
+    margin: 1rem 0;
+}
+.faq_acc {
+    position: relative;
+    margin-bottom: .3rem;
+    text-align: center;
+}
+.faq_title {
+    background: #0d1a2c !important;
+    color: #fff;
+    padding: .7rem 2rem;
+    cursor: pointer;
+    position: relative;
+    border-bottom-right-radius: 30px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #06101f;
+    
+}
+
+.faq_title i {
+    position: absolute;
+    left: 40px;
+    top: 17px;
+    transition:  all .3s ease;
+
+
+}
+
+.rot {
+    transform: rotate(90deg);
+}
+
+.faq_body {
+    padding: .7rem 2rem;
+    background: whitesmoke;
+    display: none;
+}
+
+.faq_acc::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 15px;
+    background: #fab319;
+    top: 0;
+    left: 0;
+    z-index: 1111;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: .3rem;
+    padding-right: .3rem;
+}
+
+/* ====================================================
+		========>> [ End Faq ] <<========	
+====================================================== */
+
+
+
+
 /* Welcome To Our Website */
 .w_t_e {
     background: #fa9119;
@@ -267,6 +333,16 @@ transition: all .3s ease;
     display: none;
 }
 
+/* .footer-area {
+    position: relative;
+}
+
+.v_counter {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+} */
+
 /* End Of Sign up */
 
 
@@ -309,5 +385,12 @@ transition: all .3s ease;
 
     #myVideo {
         display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .faq_title h5 {
+        padding: .5rem 2.3rem;
+        font-size: .8rem;
     }
 }

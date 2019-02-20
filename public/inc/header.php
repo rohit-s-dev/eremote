@@ -75,7 +75,7 @@
 						</li>
 					</ul>
 				</div>                                             
-				<a class="navbar-brand mx-xl-auto mx-lg-auto mx-0 logo" href="index.html">
+				<a class="navbar-brand mx-xl-auto mx-lg-auto mx-0 logo" href="index.php">
 					<img src="assets/img/e-remote-logo--1-02-02.png" alt="" />
 				</a>
 				<div class="navbar-collapse collapse">

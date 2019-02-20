@@ -789,54 +789,6 @@ h6.mision {
     top: 45px;
     font-size: 28px;
 }
-/* ====================================================
-		========>> [  Start Faq ] <<========	
-====================================================== */
-.faq {
-    margin: 1rem 0;
-}
-.faq_acc {
-    position: relative;
-    margin-bottom: .3rem;
-    text-align: center;
-}
-.faq_title {
-    background: #0d1a2c !important;
-    color: #fff;
-    padding: .7rem 2rem;
-    cursor: pointer;
-    position: relative;
-    border-bottom-right-radius: 30px;
-    text-transform: uppercase;
-    
-}
-
-.faq_body {
-    padding: .7rem 2rem;
-    background: whitesmoke;
-}
-
-.faq_acc::after {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 15px;
-    background: #fab319;
-    top: 0;
-    left: 0;
-    z-index: 1111;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-left: .3rem;
-    padding-right: .3rem;
-}
-
-/* ====================================================
-		========>> [ End Faq ] <<========	
-====================================================== */
-
 
 /* ====================================================
 		========>> [ 08 Start Events ] <<========	

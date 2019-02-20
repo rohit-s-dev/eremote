@@ -13,6 +13,10 @@
 								<input class="footer-mail-box" type="search" placeholder="Enter your email...." aria-label="Search">
 								<button class="btn footer-mail-btn hvr-right btn1 btn5" type="submit">Search</button>
 							</form>
+							<div class="v_counter">			
+			<a href='https://www.symptoma.es/'>www.symptoma.es</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=2b3d69672003e1bb51191024d29090381dde25b0'></script>
+<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/486914/t/1"></script>
+			</div>
 						</div>
 					</div>
 				</div>
@@ -26,6 +30,7 @@
 					</div>
 				</div>
 			</div>
+
 		</footer>
 		
 		<!-- =====>> END Footer <<===== 

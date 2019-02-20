@@ -232,7 +232,96 @@ include("inc/header.php");
 			<div class="container">
 					<div class="row">
 					<div class="col-md-12">
-						<div class="faq_acc">
+						<ul class="faq_acc">
+							<li class="faq_title">
+								<i class="fa fa-angle-right"></i>
+								<h5 class="mb-0">
+									HOW TO JOIN US ?
+								</h5>
+							</li>
+							<li class="faq_body">
+							Visit <a href="http://www.eremoteworld.com">Eremoteworld.com</a> and click sign up link 
+							</li>
+
+							<li class="faq_title">
+							<i class="fa fa-angle-right"></i>
+								<h5 class="mb-0">
+								Why Eremoteworld ?
+								</h5>
+							</li>
+							<li class="faq_body">
+							Eremote makes your life easier. The best way for earning which can make your dreams come true. Eremote also provides abroad travelling. 
+							</li>
+
+							<li class="faq_title">
+							<i class="fa fa-angle-right"></i>
+								<h5 class="mb-0">
+								What If i have two board in my one room ?
+								</h5>
+							</li>
+							<li class="faq_body">
+							You have to buy kit as per board required.
+							</li>
+
+							<li class="faq_title">
+							<i class="fa fa-angle-right"></i>
+								<h5 class="mb-0">
+								What If i face any kind of problems in my kit ?
+								</h5>
+							</li>
+							<li class="faq_body">
+							There will be one year of warranty on a kit .
+							*Terms and Conditions apply*
+							<li class="faq_title">
+							<i class="fa fa-angle-right"></i>
+								<h5 class="mb-0">
+								What is the closing date ?
+								</h5>
+							</li>
+							<li class="faq_body">
+							25th of every month.
+							</li>
+
+							<li class="faq_title">
+							<i class="fa fa-angle-right"></i>
+								<h5 class="mb-0">
+								When my account will be credited ?
+								</h5>
+							</li>
+							<li class="faq_body">
+							Within the five days of working.
+							</li>
+
+							<li class="faq_title">
+							<i class="fa fa-angle-right"></i>
+								<h5 class="mb-0">
+								can i purchase kit from my wallet money ?
+								</h5>
+							</li>
+							<li class="faq_body">
+							Yes.
+							</li>
+
+							<li class="faq_title">
+							<i class="fa fa-angle-right"></i>
+								<h5 class="mb-0">
+								can i purchase ID of another person from my wallet money ?
+								</h5>
+							</li>
+							<li class="faq_body">
+							Yes.
+							</li>
+							<li class="faq_title">
+							<i class="fa fa-angle-right"></i>
+								<h5 class="mb-0">
+								When will i get my kit after order ?
+								</h5>
+							</li>
+							<li class="faq_body">
+							From the date of order, you will get your kit delivered at your home within 10 days .
+							</li>
+						</ul>
+						<!-- <div class="faq_acc">
 							<div class="faq_title" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 								<h5 class="mb-0">
 									HOW TO JOIN US ?
@@ -343,7 +432,7 @@ include("inc/header.php");
 								Visit <a href="http://www.eremoteworld.com">Eremoteworld.com</a> and click sign up link 
 								</div>
 							</div>
-						</div>
+						</div> -->
 		
 						<!-- <div class="faq_acc">
 							<div class="faq_title" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
