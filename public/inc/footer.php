@@ -45,19 +45,19 @@
 		<!--====>> Carousel JS <<====-->
         <script src="assets/js/owl.carousel.min.js"></script>   
 		<!--====>> magnific popup JS <<====-->
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>   
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>  
+
 		<!--====>> Google map JS <<====--> 
 		<!-- google map api -->
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDi-rrw9lb-uKY1vHd9gkzuBpj4-hiBsUA&amp;callback=initMap" async
+		<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDi-rrw9lb-uKY1vHd9gkzuBpj4-hiBsUA&amp;callback=initMap" async
 			defer></script>
-        <script src="assets/js/map.js"></script>   
+        <script src="assets/js/map.js"></script>    -->
 		<!--====>> scrolltotop JS <<====-->		
 		<script src="assets/js/time-down.js"></script>		
 		<!--====>> Loader JS <<====-->		
         <script src="assets/js/loader.js"></script> 	
 		<!--====>> scripts JS <<====-->		
 		<script src="assets/js/scripts.js"></script>   	
-
 		<!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

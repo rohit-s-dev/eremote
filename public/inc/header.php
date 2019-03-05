@@ -1,3 +1,7 @@
+<?php 
+require_once("../private/includes/initialize.php");
+?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="en-US">
     
@@ -19,7 +23,11 @@
         <link rel="stylesheet" href="assets/css/my_style.css"> 
 		<!--====>> Style Template <<====-->
 		<link rel="stylesheet" href="assets/css/responsive-2.css">
-		
+
+		<!-- Sweet Alert CSS -->
+		<link rel="stylesheet" href="assets/plugins/sweetalert/sweetalert.css">	
+		<!--Sweet Alert JS -->
+		<script src="assets/plugins/sweetalert/sweetalert.min.js"></script>	
 		 
     </head>
     <body>

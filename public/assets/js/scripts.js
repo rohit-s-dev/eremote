@@ -153,3 +153,23 @@ $(document).ready(function(){
 		ic.toggleClass('rot');
 	});
 });
+
+
+// Testing Swal
+// $(document).ready(function(){
+// 	$('.sw_t').on('click', function(){
+// 		swal({
+// 			title: 'Hello',
+// 			icon: 'success'
+// 		});
+// 	});
+// });
+
+
+// singup sponser id
+// $sel =  $('select[name="d_h_s_id"]');
+// $sponser_id = $("input[name='sponser_id']");
+
+// if($sel.val('Direct')) {
+// 	$sponser_id.val('er00000000');
+// }

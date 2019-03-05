@@ -1,3 +1,5 @@
 private/
 docs/
 ex_html/
+pages/
+*html
