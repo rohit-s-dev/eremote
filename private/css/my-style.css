@@ -1,0 +1,211 @@
+
+/*=============================================
+    =            Referral Link            =
+=============================================*/
+
+.ref-link {
+    background: rgb(253, 194, 1);
+    position: fixed;
+    right: 0;
+    top: 14%;
+    padding: .8rem;
+    z-index: 999;
+
+    transform: translateX(300px);
+
+    transition: all .3s ease;
+
+}
+
+
+.ref-link span {
+    color: rgb(255, 0, 0);
+    margin-left: 1.3rem;
+
+    /* Animation goes here */
+
+    animation: pulse 1s backwards infinite ease;
+
+    cursor: pointer;
+}
+
+.ref-link_close {
+    content: 'X';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4%;
+    height: 100%;
+    background: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+
+    display: none;
+
+    cursor: pointer;
+}
+
+
+/* javascript classes for referral */
+
+.ref-show {
+
+    transform: translateX(0);
+
+}
+
+
+
+/*=============================================
+=            referral link span animtaion     =
+=============================================*/
+
+@keyframes pulse {
+    0% {
+        opacity: .5;
+    }
+
+    50% {
+        opacity: .8;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/*=====  End of Section comment block  ======*/
+
+
+
+
+/*=============================================
+=            account Details            =
+=============================================*/
+
+.ac_det_box {
+    background: rgb(253, 194, 1);
+    color: #000;
+    overflow: hidden;
+    padding: .6rem .3rem;
+}
+
+.ac_det_box .ac_det_box_heading {
+    background: #fff;
+    display: inline-block;
+    padding: .2rem .8rem;
+    /* border-right: 1px solid #000;
+    border-bottom: 1px solid #000; */
+}
+
+.ac_det_box .ac_det_r {
+    padding: .9rem 0;
+    border: 1px solid #000;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+/*=====  End of account Details  ======*/
+
+
+.t_d {
+    background: rgb(53, 174, 255);
+    padding: 3rem;
+}
+
+.ac_t {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    
+}
+
+.ac_t span {
+    font-size: 1.5rem;
+}
+
+.ac_t .numb {
+    margin-left: .5rem;
+    background: rgb(0, 0, 0);
+    display: inline-block;
+    padding: 1rem;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+
+}
+
+
+
+/*=============================================
+=            form            =
+=============================================*/
+
+#profile {
+    background: rgba(255, 255, 255, 0.651);
+    padding: 1rem 1rem; 
+
+}
+
+#profile input {
+    padding: 0 10px;
+}
+
+.p_text {
+    background: rgb(5, 165, 240);
+    padding: .8rem;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: monospace;
+    border-bottom: 1px solid rgb(4, 115, 167);
+}
+
+#profile .p_title {
+    
+}
+/*=====  End of form  ======*/
+
+
+
+
+/* Animation Logo */
+
+.f_l {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.f_l .f_l_img {
+    /* background: rgb(4, 115, 167); */
+    /* display: inline-block; */
+
+}
+
+.f_l .f_l_img img {
+    width: 10%;
+}
+
+/* Animation Logo */
+
+
+
+/* documents related  */
+
+.dc {
+    position: relative;
+    /*right: 0;
+    bottom: 40px; */
+    background: #000;
+    padding: 1rem;
+    color: #fff;
+}
