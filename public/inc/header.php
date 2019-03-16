@@ -42,7 +42,7 @@ require_once("../private/includes/initialize.php");
 					<div class="col-lg-6 col-md-7">
 						<div class="header-content">
 							<span><i class="far fa-envelope"></i> support@eremoteworld.com</span>
-							<span><i class="fas fa-phone"></i> +91-8210762399</span>
+							<span><i class="fas fa-phone"></i> 0612-2222399</span>
 						</div>
 					</div>
 					<div class="col-lg-6 col-md-5">

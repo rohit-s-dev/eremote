@@ -1,7 +1,9 @@
 <?php 
 include("inc/header.php");
 ?>
-
+	<?php 
+	include("inc/b_s.php");
+	?>
 <section class="contct">
     <div class="container">
     <div class="table_title my-5">
@@ -13,7 +15,8 @@ include("inc/header.php");
             <div class="ct_add_box">
                 <div class="add_box">
                     <h5 class="add_box_t">Address</h5>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat, exercitationem.</p>
+                    <p>FF12 Bhuwaneshwar Plaza New Market,
+					    <br />Patna 800001</p>
                     <div class="ic_b">
                         <i class="fa fa-home"></i>
                     </div>
@@ -27,7 +30,9 @@ include("inc/header.php");
                 </div>
                 <div class="add_box">
                     <h5 class="add_box_t">Contact</h5>
-                    <p><a href="tel:+91-8210762399">+91-8210762399</a></p>
+                    <p style='margin-top: 1rem; display: inline-block;'><a href="tel:+91-8210762399">+91-8210762399</a></p>
+                    <p style='margin-top: 1rem; display: inline-block;'><a href="tel:+91-8210762399">+91-8210762399</a></p>
+                    <p style='margin-top: 1rem; display: inline-block;'><a href="tel:0612-2222399">0612-2222399</a></p>
                     <div class="ic_b">
                         <i class="fa fa-phone"></i>
                     </div>

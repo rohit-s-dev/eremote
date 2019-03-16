@@ -2,7 +2,10 @@
 include("inc/header.php");
 ?>
 	
-
+	<?php 
+	include("inc/b_s.php");
+	?>
+	
         <!-- =====>> Start SignUp <<===== 
 		============================= -->
 
@@ -73,21 +76,7 @@ include("inc/header.php");
 						
 						</script>";
 
-					} elseif($d_h_s_id === 'Direct' && !empty($sponser_id)){
-						
-						echo '
-						<script>
-						swal({
-							
-							title: "Error",
-							text: "Sponser ID Must Be Empty If Do not have Sponser ID ",
-							icon: "warning"
-						
-						})
-						</script>
-						';
-
-					} elseif ($d_h_s_id === 'Sponsered' && empty($sponser_id)) {
+					}  elseif ($d_h_s_id === 'Sponsered' && empty($sponser_id)) {
 						echo '
 						<script>
 						swal({
@@ -120,7 +109,7 @@ include("inc/header.php");
 							$user_id = 'Direct';
 						} 
 
-						$q_i = "INSERT INTO user(userid, firstname, lastname, password, m_numb, sponsered, direct, added_by ) VALUES('$r_user_id', '$firstname', '$lastname', '$hashedpwd' , '$mobile' ,'$sponser_id', '$d_h_s_id', '$user_id')";
+						$q_i = "INSERT INTO user(userid, firstname, lastname, password, m_numb, sponsered,  added_by ) VALUES('$r_user_id', '$firstname', '$lastname', '$hashedpwd' , '$mobile' ,'$sponser_id',  '$user_id')";
 
 						$q_i_res = mysqli_query($con, $q_i);
 
@@ -160,7 +149,7 @@ include("inc/header.php");
 							<h3 class="my-4"> Sponser ID </h3>
 							<div class="form-group">
 								<div class="sp_id">
-									<label for="d_h_s_id">Do not have sponser ID ? </label>
+									<label for="d_h_s_id">Do you have sponser ID ? </label>
 								<select name="d_h_s_id" id="d_h_s_id">
 
 									<?php 
@@ -213,7 +202,14 @@ include("inc/header.php");
 										<label for="mobile">Mobile No. </label>
 									</div>
 									<div class="col-md-10">
-										<input class="f_s_i" type="text" name="mobile" id="mobile" placeholder="Mobile No." data-toggle="tooltip" data-placement="right" title="Your Mobile No (mobile number must include +91 and does not contain spaces between them .)" maxlength="10"  onkeypress="if(event.keyCode<48 || event.keyCode>57)event.returnValue=false;">
+									    <div class='input-grpup'>
+									       <div class="input-group-prepend">
+                                              <div class="input-group-text">+91     </div>
+                                          
+                                           
+        									
+										<input class="f_s_i" type="text" name="mobile" id="mobile" placeholder="Mobile No." data-toggle="tooltip" data-placement="right" title="Your Mobile No (do not include +91)" maxlength="10"  onkeypress="if(event.keyCode<48 || event.keyCode>57)event.returnValue=false;">
+										 </div>
 									</div>
 								</div>
 							</div>
@@ -238,7 +234,7 @@ include("inc/header.php");
 									</div>
 									<div class="col-md-10">
 										<div class="ps">
-											<input class="f_s_i" type="password" name="c_pwd" id="c_pwd" placeholder="Confirm Password" data-toggle="tooltip" data-placement="right" title="password should match ">
+											<input class="f_s_i" type="password" name="c_pwd" id="c_pwd" placeholder="Confirm Password" data-toggle="tooltip" data-placement="right" title="Password should match ">
 											<!-- <i class="fa fa-eye ps_show"></i>
 											<i class="fa fa-eye-slash ps_hide" ></i> -->
 										</div>

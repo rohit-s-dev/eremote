@@ -65,7 +65,10 @@
 		========>> [ End Faq ] <<========	
 ====================================================== */
 
-
+::selection {
+    background-color: #fa9119;
+    color: #fff;
+}
 
 
 /* Welcome To Our Website */
@@ -352,7 +355,68 @@ transition: all .3s ease;
 
 
 
+/* Bookin Started */
+.bs {
+    position: fixed;
+    right: 0;
+    top: 25%;
+    z-index: 9999999;
+    background: #000000;
+    color: #fff;
+    padding: 1rem;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+    
+}
 
+.bs span {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    background-image: linear-gradient(to bottom, #ff0000, #120446);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 800;
+
+    animation: g_an 2s backwards infinite ease;
+}
+
+
+/* Gradient Animation */
+@keyframes g_an {
+    0% {
+        background-image: linear-gradient(to bottom, #ff0000, #00ff4c);
+    }
+
+    30% {
+        background-image: linear-gradient(to bottom, #00ff4c, #00eeff);
+    }
+
+    60% {
+        background-image: linear-gradient(to bottom, #00eeff, #ff00d4);
+    }
+
+    100% {
+        background-image: linear-gradient(to bottom, #ff00d4, #ffd000);
+    }
+}
+
+
+@keyframes g_an2 {
+    0% {
+        background-image: linear-gradient(to bottom, #ff0000, #00ff4c);
+    }
+
+    100% {
+        background-image: linear-gradient(to bottom, #ff00d4, #ffd000);
+    }
+}
+/* End Of Gradient Animation */
+
+
+/* End Of Bookin Started */
 
 
 

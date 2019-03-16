@@ -144,7 +144,7 @@
                                     <tr>
                                         <td><?php echo $id; ?></td>
                                         <td>
-                                            <a href="view_user.php?id=<?php echo $userid; ?>">
+                                            <a class='' href="view_user.php?id=<?php echo $userid; ?>">
                                                 <?php echo $userid; ?>
                                             </a>
                                         </td>
@@ -160,14 +160,14 @@
                                             
                                             if($status === '0') {
                                                 echo "
-                                                <a href='reports.php?act=$userid' class='text-danger'>
+                                                <a href='reports.php?act=$userid' class='text-danger btn btn-danger' >
                                                     Deactivated
                                                 </a>
                                                 
                                                 ";
                                             } elseif($status === '1') {
                                                 echo "
-                                                <a href='reports.php?deact=$userid' class='text-success'>
+                                                <a href='reports.php?deact=$userid' class='btn btn-success text-success'>
                                                 
                                                     Activated
                                                 </a>

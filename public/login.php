@@ -2,7 +2,9 @@
 include("inc/header.php");
 ?>
 	
-        
+	<?php 
+	include("inc/b_s.php");
+	?>
         <!-- =====>> Start SignUp <<===== 
 		============================= -->
 

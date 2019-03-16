@@ -12,6 +12,18 @@ include("inc/header.php");
 <!-- End of Welcome To Eremote Website -->
 
 <!-- ===========================
+    =====>> Booking Start <<===== -->
+<div class='bs'>
+	<span>
+	BOOKING STARTED
+	</span>
+</div>
+<!-- ===========================
+    =====>> Booking Start <<===== -->
+
+
+
+<!-- ===========================
     	=====>> Start Slider <<===== -->
 		
 		<section id="Home-area" class="header">
@@ -474,8 +486,8 @@ include("inc/header.php");
 								<div class="footer-contact-add">
 									<i class="fas fa-map-marker-alt"></i>
 									<h6>Address</h6>
-									<p>12/A Street Road,
-										<br />New Casol, NY 18019</p>
+									<p>FF12 Bhuwaneshwar Plaza New Market,
+										<br />Patna 800001</p>
 								</div>
 							</div>
 							<div class="col-lg-4 col-md-6 col-sm-12 float">
@@ -489,17 +501,57 @@ include("inc/header.php");
 							<div class="col-lg-4 col-md-6 col-sm-12 float">
 								<div class="footer-contact-add">
 									<i class="fas fa-phone"></i>
-									<h6>Address</h6>
-									<p>+91-8210762399
-										<!-- <br />+990 980 786 -90567</p> -->
+									<h6>Contact Numberlki</h6>
+									<p>+91-8340196748
+										<br />+91-8210762399
+										<br/>0612-2222399
+										</p>
 								</div>
 							</div>
 						</div>
+<?php 
+if(isset($_POST['name'])) {
 
+
+
+	// mail
+	$to = sendto();
+	$subject = "New MSME Reg Form Submitted";
+	$senderMail = 'test'; 
+	$senderName = 'test';
+
+	$header = "From : " . 'incomehouse' .  "\r\n". "<br>";
+	$header .= "Reply To : " .'do not reply'. "\r\n". "<br>";
+
+	$message = "Submitted By : " . $username . "\r\n". "<br>";
+	$message .= "Firm Name : " . $firmname . "\r\n". "<br>";
+	$message .= "Applicant Name : " . $msme_applicant_name . "\r\n". "<br>";
+
+	$message .= "Mobile Number : ". $msme_mob_numb . "\r\n". "<br>";
+	$message .= "Aadhar Number : " . $msme_aadhar_no . "\r\n". "<br>";
+	$message .= "Pan Number : " . $msme_pan_number . "\r\n". "<br>";
+	$message .= "Email ID : " . $msme_email_id . "\r\n". "<br>";
+	$message .= "Address : " . $msme_address  . "\r\n". "<br>";
+	$message .= "Aadhar File : " . $msme_aadhar_file  . "\r\n". "<br>";
+	$message .= "Pan Card file : " . $msme_pan_card_file  . "\r\n". "<br>";
+	$message .= "Capital : " . $msme_capital  . "\r\n". "<br>";
+	
+	$files = array('images/uploads/msme/'.$msme_aadhar_file, 'images/uploads/msme/'.$msme_pan_card_file);
+	
+	// $msme_send = mail($to, $subject ,$header, $message);
+	$msme_send = multi_attach_mail($to, $subject, $message, $senderMail, $senderName, $files);
+	echo "<script>
+		swal({
+			title: 'Yes',
+			type: 'success'
+		});
+	</script>";
+}
+?>
 						<div class="row">
 							<div class="col-xl-12 col-lg-12">
 								<div class="content-from three pt-60 pb-100">
-									<form id="contact-form">
+									<form id="contact-form" action='' method='post'>
 										<div class="row">
 											<div class="col-xl-6 col-lg-6">
 												<input type="text" name="name" placeholder="NAME" />

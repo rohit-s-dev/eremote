@@ -173,3 +173,38 @@ $(document).ready(function(){
 // if($sel.val('Direct')) {
 // 	$sponser_id.val('er00000000');
 // }
+
+$(document).ready(function(){
+	$('.bs').on('click', function(){
+		$(this).animate({
+			left: '+=100px'
+		}, 300, function(){
+			alert('Booking Started');
+		});
+	});
+});
+
+
+
+// Sponser ID
+$(document).ready(function() {
+
+
+	$('#d_h_s_id').change(function() {
+  
+		$sp = $('#d_h_s_id').val();
+		$inp = $('#sponser_id');
+	
+	if ( $sp == 'Sponsered' ) {
+		
+		$inp.val('Please type your sponsered ID'); 
+		
+	} else {
+
+		$inp.val('Eremote');
+
+	}
+
+});
+
+});

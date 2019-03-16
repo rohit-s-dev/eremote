@@ -1,7 +1,9 @@
 <?php 
 include("inc/header.php");
 ?>
-
+	<?php 
+	include("inc/b_s.php");
+	?>
 <section class="plans">
     <div class="container">
         <div class="table_title">
