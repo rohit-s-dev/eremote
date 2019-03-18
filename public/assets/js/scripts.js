@@ -189,7 +189,10 @@ $(document).ready(function(){
 // Sponser ID
 $(document).ready(function() {
 
-
+	// if( $sp == 'Direct' ) {
+	// 	$inp.val('Eremote');
+	// }
+	
 	$('#d_h_s_id').change(function() {
   
 		$sp = $('#d_h_s_id').val();
@@ -206,5 +209,43 @@ $(document).ready(function() {
 	}
 
 });
+
+});
+
+var showr = $('#s_name');
+var showl = $('#s_nl');
+	showl.hide();
+	showr.hide();
+$(document).ready(function(){
+	
+	$('#sponser_id').keyup(function(){
+
+		
+		var spnser_id = $('#sponser_id').val();
+		
+		$.ajax({
+
+			url: '../private/ajax/search.php',
+			data:{sponser_id: spnser_id},
+			type: 'POST',
+
+			success: function( data ){
+				
+				if( !data.error ) {
+					if(spnser_id !== '') {
+						showl.show();
+						showr.show();
+						showr.val( data);
+					} else {
+						showl.hide();
+						showr.hide();
+					}
+				}
+
+			}
+
+		});
+
+	});
 
 });

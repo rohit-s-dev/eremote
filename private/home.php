@@ -1,4 +1,4 @@
-﻿    <?php 
+﻿<?php 
     include "includes/header.php";
     ?>
 
@@ -51,7 +51,7 @@ if( $prResult   > 0 ) {
                         </div>
                         <div class="content">
                             <div class="text">CURRENT INCOME</div>
-                            <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="0" data-to="" data-speed="15" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@ if( $prResult   > 0 ) {
                         </div>
                         <div class="content">
                             <div class="text">LEVEL INCOME</div>
-                            <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="0" data-to="" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -84,7 +84,7 @@ if( $prResult   > 0 ) {
                         </div>
                         <div class="content">
                             <div class="text">TEAM REMOTE QUANTITY</div>
-                            <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="0" data-to="" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -256,8 +256,8 @@ if( $prResult   > 0 ) {
                                 
                                     <div class="ac_t">
                                         <i class="fa fa-user"></i><span>Team</span>
-                                        <div class="numb count-to" data-from="0" data-to="4" data-speed="800" data-fresh-interval="1">
-                                            4
+                                        <div class="numb count-to" data-from="0" data-to="0" data-speed="800" data-fresh-interval="1">
+                                           0
                                         </div> 
                                     </div>
 
@@ -267,8 +267,8 @@ if( $prResult   > 0 ) {
                                 
                                     <div class="ac_t">
                                         <i class="fa fa-user"></i><span>Active Team</span>
-                                        <div class="numb count-to" data-from="0" data-to="4" data-speed="800" data-fresh-interval="1">
-                                            4
+                                        <div class="numb count-to" data-from="0" data-to="0" data-speed="800" data-fresh-interval="1">
+                                            0
                                         </div> 
                                     </div>
                                 

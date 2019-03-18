@@ -28,8 +28,26 @@ require_once("../private/includes/initialize.php");
 		<link rel="stylesheet" href="assets/plugins/sweetalert/sweetalert.css">	
 		<!--Sweet Alert JS -->
 		<script src="assets/plugins/sweetalert/sweetalert.min.js"></script>	
-		 
-    </head>
+	
+		<style>
+		.sho_b {
+			display: none;
+			text-align: center;
+			/* height: auto; */
+			/* padding: 1rem 0; */
+			background: #fa9119;
+			color: #fff;
+			text-transform: uppercase;
+			font-family: inherit;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			margin-bottom: 10px;
+		}
+		</style>
+	</head>
+	
     <body>
 		
 		

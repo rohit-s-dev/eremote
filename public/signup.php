@@ -42,6 +42,8 @@ include("inc/header.php");
 
 					$mobile = escape($con, h($_POST['mobile']));
 
+					$email = escape($con, h($_POST['email']));
+
 					$pwd = escape($con, h($_POST['pwd']));
 
 					$c_pwd = escape($con, h($_POST['c_pwd']));
@@ -57,10 +59,20 @@ include("inc/header.php");
 					}
 
 					
+					if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
+						echo "<script>
+							swal({
+								title: 'Email Error',
+								text: 'Invalid Email',
+								type: 'error'
+							});    
+                    	</script>";
+					    
+					}
 
 					
-					if(empty($mobile) || empty($pwd) || empty($c_pwd) || empty($firstname) || empty($lastname)) {
-						
+					if(empty($mobile) || empty($pwd) || empty($c_pwd) || empty($firstname) || empty($lastname) || empty($email) || empty($sponser_id)) {
+						 
 						
 						echo "<script>
 						
@@ -88,51 +100,100 @@ include("inc/header.php");
 						})
 						</script>
 						';
-					} elseif($pwd !== $c_pwd) {
-						echo "<div class='alert alert-danger alert-dismissable fade show'>
-							<button type='button' class='close' data-dismiss='alert'>
-							&times;</button>
-							<strong>Password Didn't Matched</strong>						
-						</div>";
+					}  elseif($pwd !== $c_pwd) {
+						echo "<script>
+                        swal({
+                            title: 'Password Error',
+                            text: 'Password Didn't Match',
+                            type: 'error'
+                        });    
+                    </script>";
 
-					} elseif($mobile === $mobile_c) {
-						echo "<div class='alert alert-danger alert-dismissable fade show'>
-						<button type='button' class='close' data-dismiss='alert'>
-						&times;</button>
-						<strong>User Already Exist</strong>						
-					</div>";
+					}  else {
 
-					} else {
-						$r_user_id;
+						if ($d_h_s_id === 'Sponsered') {
 
-						if(!isset($_GET['ref_id'])) {
-							$user_id = 'Direct';
-						} 
+                            $sp_q = "SELECT userid FROM user WHERE userid = '$sponser_id' ";
+                            $spQ = mysqli_query( $con, $sp_q );
 
-						$q_i = "INSERT INTO user(userid, firstname, lastname, password, m_numb, sponsered,  added_by ) VALUES('$r_user_id', '$firstname', '$lastname', '$hashedpwd' , '$mobile' ,'$sponser_id',  '$user_id')";
+                            $sp_res = mysqli_num_rows($spQ);
 
-						$q_i_res = mysqli_query($con, $q_i);
+                            if ( $sp_res > 0 ) {
 
-						if($q_i_res) {
-							
-							echo "<script>
-							
-								swal({
-									title: 'User Created',
-									text: 'Your User ID: $r_user_id',
-									type: 'success',
-									button: 'OK'
-								});
+                                $q_i = "INSERT INTO user(userid, firstname, lastname, password, m_numb, sponsered ) VALUES('$r_user_id', '$firstname', '$lastname', '$hashedpwd' , '$mobile' ,'$sponser_id')";
 
-							</script>";
+                                $q_i_res = mysqli_query($con, $q_i);
+    
+                                if($q_i_res) {
+                                    
+                                    echo "<script>
+                                    
+                                        swal({
+                                            title: 'User Created',
+                                            text: 'Your User ID: $r_user_id Please Check Your Mail If You Provided',
+                                            type: 'success',
+                                            button: 'OK'
+                                        });
+    
+									</script>";
+									
+									if (!empty( $email )) {
+					        
+                					        $body = "<h1>Welcome To EREMOTEWORLD.COM</h1>". "<br>";
+                					    	$body .= "Your ID :" . $r_user_id. "<br>";
+                					    	$body .= "Full Name :" . $firstname .' '.$lastname . "<br>";
+                							$body .= "Mobile Number :" . $mobile . "<br>";
+                							$body .= "Sponsered ID :" . $sponser_id. "<br>";
+                							$body .= "Password :" . $pwd. "<br>";
+                							$mail = u_s($email, $body);
+                					}
+                                }
+                            } else {
+                                echo "<script>
+                                    
+                                        swal({
+                                            title: 'Error',
+                                            text: 'Invalid Sponser ID',
+                                            type: 'error',
+                                            button: 'OK'
+                                        });
+    
+                                </script>";
+                            }
 
-						} else {
-							echo "<div class='alert alert-danger alert-dismissable 	fade show'>
-								<button type='button' class='close' data-dismiss='alert'>
-								&times;</button>
-								<strong> Something Went Wrong </strong>
-							</div>";
-						}
+                        } else {
+
+                            $q_i = "INSERT INTO user(userid, firstname, lastname, password, m_numb, sponsered ) VALUES('$r_user_id', '$firstname', '$lastname', '$hashedpwd' , '$mobile' ,'$sponser_id')";
+
+                                $q_i_res = mysqli_query($con, $q_i);
+    
+                                if($q_i_res) {
+                                    
+                                    echo "<script>
+                                    
+                                        swal({
+                                            title: 'User Created',
+                                            text: 'Your User ID: $r_user_id Please Check Your Mail If You Provided',
+                                            type: 'success',
+                                            button: 'OK'
+                                        });
+    
+									</script>";
+									
+									if (!empty( $email )) {
+					        
+                					        $body = "<h1>Welcome To EREMOTEWORLD.COM</h1>". "<br>";
+                					    	$body .= "Your ID :" . $r_user_id. "<br>";
+                					    	$body .= "Full Name :" . $firstname .' '.$lastname . "<br>";
+                							$body .= "Mobile Number :" . $mobile . "<br>";
+                							$body .= "Sponsered ID :" . $sponser_id. "<br>";
+                							$body .= "Password :" . $pwd. "<br>";
+                							$mail = u_s($email, $body);
+                					}
+									
+                                }
+
+                        }
 
 					}
 					
@@ -145,7 +206,7 @@ include("inc/header.php");
 
                 <div class="row">
                     <div class="col-md-8 m-auto">
-                        <form action="" method="post" id="form_">
+                        <form action="" method="post" id="form_" autocomplete="off">
 							<h3 class="my-4"> Sponser ID </h3>
 							<div class="form-group">
 								<div class="sp_id">
@@ -156,8 +217,9 @@ include("inc/header.php");
 									if(isset($_GET['ref_id'])) {
 										echo '<option value="Sponsered">Yes</option>';
 									} else {
-										echo '<option value="Sponsered">Yes</option>
-										<option value="Direct">No</option>';
+										echo '
+										<option value="Direct">No</option>
+										<option value="Sponsered">Yes</option>';
 									}
 									
 									?>
@@ -166,15 +228,37 @@ include("inc/header.php");
 								</div>
 							</div>
 
+
+						
+
 					<div class="form-group">
 						<div class="row">
 							<div class="col-md-2">
 								<label for="sponser_id">Sponser ID </label>
 							</div>
 							<div class="col-md-10">
-								<input class="f_s_i" type="text" name="sponser_id" id="sponser_id" placeholder="Sponser ID"  data-toggle="tooltip" data-placement="right" title="Sponser ID if you have ." value="<?php if (isset($_GET['ref_id'])) { echo $rf_id;} ?>">
+								<input autocomplete="false" class="f_s_i" type="text"  name="sponser_id" value='Eremote' id="sponser_id" placeholder="Sponser ID"  data-toggle="tooltip" data-placement="right" title="Sponser ID if you have ." value="<?php if (isset($_GET['ref_id'])) { echo $rf_id;} ?>">
 							</div>
+							
 						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="row">
+
+							<div class="col-md-2">
+								<label id='s_nl' for="sponser_id">Sponser Name </label>
+							</div>
+
+							<div class="col-md-10">
+								<!-- <input type="text" name="s_name" id="s_name" class='f_s_i' style='background-color:#f5f5f5'> -->
+								<textarea name="s_name" id="s_name" class='f_s_i' cols="30" rows="10" style='background-color:#f5f5f5'></textarea>
+							</div>
+
+						</div>
+					</div>
+				
+					<div id='showr'>
 					</div>
 							<div class="form-group">
 								<div class="row">
@@ -204,15 +288,29 @@ include("inc/header.php");
 									<div class="col-md-10">
 									    <div class='input-grpup'>
 									       <div class="input-group-prepend">
-                                              <div class="input-group-text">+91     </div>
-                                          
-                                           
-        									
-										<input class="f_s_i" type="text" name="mobile" id="mobile" placeholder="Mobile No." data-toggle="tooltip" data-placement="right" title="Your Mobile No (do not include +91)" maxlength="10"  onkeypress="if(event.keyCode<48 || event.keyCode>57)event.returnValue=false;">
+                                            <div class="input-group-text">+91</div>
+											<input class="f_s_i" type="text" name="mobile" id="mobile" placeholder="Mobile No." data-toggle="tooltip" data-placement="right" title="Your Mobile No (do not include +91)" maxlength="10"  onkeypress="if(event.keyCode<48 || event.keyCode>57)event.returnValue=false;">
 										 </div>
+										</div>
 									</div>
 								</div>
 							</div>
+							
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-2">
+										<label for="email">Email </label>
+									</div>
+									<div class="col-md-10">
+										<div class="ps">
+											<input  autocomplete="false" class="f_s_i" type="email" name="email" id="" placeholder="Email" data-toggle="tooltip" data-placement="right" title="Please type valid Email ID">
+											<!-- <i class="fa fa-eye ps_show"></i>
+											<i class="fa fa-eye ps_hide"></i> -->
+										</div>
+									</div>
+								</div>
+							</div>
+							
 							<div class="form-group">
 								<div class="row">
 									<div class="col-md-2">
@@ -220,7 +318,7 @@ include("inc/header.php");
 									</div>
 									<div class="col-md-10">
 										<div class="ps">
-											<input class="f_s_i" type="password" name="pwd" id="pwd" placeholder="Password" data-toggle="tooltip" data-placement="right" title="Password must contain one letter and and a symbol and length should be more than 4 characters">
+											<input autocomplete="false" class="f_s_i" type="password" name="pwd" id="pwd" placeholder="Password" data-toggle="tooltip" data-placement="right" title="Password must contain one letter and and a symbol and length should be more than 4 characters">
 											<!-- <i class="fa fa-eye ps_show"></i>
 											<i class="fa fa-eye ps_hide"></i> -->
 										</div>
