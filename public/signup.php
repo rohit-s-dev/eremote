@@ -59,19 +59,9 @@ include("inc/header.php");
 					}
 
 					
-					if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
-						echo "<script>
-							swal({
-								title: 'Email Error',
-								text: 'Invalid Email',
-								type: 'error'
-							});    
-                    	</script>";
-					    
-					}
 
 					
-					if(empty($mobile) || empty($pwd) || empty($c_pwd) || empty($firstname) || empty($lastname) || empty($email) || empty($sponser_id)) {
+					if(empty($mobile) || empty($pwd) || empty($c_pwd) || empty($firstname) || empty($lastname) || empty($sponser_id)) {
 						 
 						
 						echo "<script>
@@ -88,6 +78,18 @@ include("inc/header.php");
 						
 						</script>";
 
+					}elseif(!phoneNumbervalidation($mobile)){
+					    echo '
+						<script>
+						swal({
+							
+							title: "Error",
+							text: "Invalid Mobile Number",
+							type: "error"
+						
+						})
+						</script>
+						';
 					}  elseif ($d_h_s_id === 'Sponsered' && empty($sponser_id)) {
 						echo '
 						<script>
@@ -125,28 +127,28 @@ include("inc/header.php");
                                 $q_i_res = mysqli_query($con, $q_i);
     
                                 if($q_i_res) {
+                                
+                                    $mob = $mobile;
+                                    $mes = "WELCOME TO EREMOTEWORLD   ,";
+                                    $mes .= "YOUR USER ID : $r_user_id   ," ;
+                                    $mes .= "YOUR SPONSER ID : $sponser_id   ," ;
+                                    $mes .= "YOUR PASS : $pwd  ";
                                     
-                                    echo "<script>
+                                    $m = otp($mob, wordwrap($mes, 70));
+                                    
+                                   
+                                        echo "<script>
                                     
                                         swal({
                                             title: 'User Created',
-                                            text: 'Your User ID: $r_user_id Please Check Your Mail If You Provided',
+                                            text: 'Your User ID: $r_user_id Please Check Your Mobile ',
                                             type: 'success',
                                             button: 'OK'
                                         });
     
 									</script>";
+                                  
 									
-									if (!empty( $email )) {
-					        
-                					        $body = "<h1>Welcome To EREMOTEWORLD.COM</h1>". "<br>";
-                					    	$body .= "Your ID :" . $r_user_id. "<br>";
-                					    	$body .= "Full Name :" . $firstname .' '.$lastname . "<br>";
-                							$body .= "Mobile Number :" . $mobile . "<br>";
-                							$body .= "Sponsered ID :" . $sponser_id. "<br>";
-                							$body .= "Password :" . $pwd. "<br>";
-                							$mail = u_s($email, $body);
-                					}
                                 }
                             } else {
                                 echo "<script>
@@ -169,27 +171,26 @@ include("inc/header.php");
     
                                 if($q_i_res) {
                                     
-                                    echo "<script>
+                                    $mob = $mobile;
+                                    $mes = "WELCOME TO EREMOTEWORLD  ,";
+                                    $mes .= "YOUR USER ID : $r_user_id  ," ;
+                                    $mes .= "YOUR SPONSER ID : Eremote  ," ;
+                                    $mes .= "YOUR PASS : $pwd  ";
+                                    
+                                    $m = otp($mob, wordwrap($mes, 70));
+                                    
+                                    
+                                        echo "<script>
                                     
                                         swal({
                                             title: 'User Created',
-                                            text: 'Your User ID: $r_user_id Please Check Your Mail If You Provided',
+                                            text: 'Your User ID: $r_user_id Please Check Your Mobile ',
                                             type: 'success',
                                             button: 'OK'
                                         });
     
 									</script>";
-									
-									if (!empty( $email )) {
-					        
-                					        $body = "<h1>Welcome To EREMOTEWORLD.COM</h1>". "<br>";
-                					    	$body .= "Your ID :" . $r_user_id. "<br>";
-                					    	$body .= "Full Name :" . $firstname .' '.$lastname . "<br>";
-                							$body .= "Mobile Number :" . $mobile . "<br>";
-                							$body .= "Sponsered ID :" . $sponser_id. "<br>";
-                							$body .= "Password :" . $pwd. "<br>";
-                							$mail = u_s($email, $body);
-                					}
+                               
 									
                                 }
 
@@ -200,9 +201,6 @@ include("inc/header.php");
 				}
 
 				?>
-
-
-
 
                 <div class="row">
                     <div class="col-md-8 m-auto">
@@ -237,13 +235,13 @@ include("inc/header.php");
 								<label for="sponser_id">Sponser ID </label>
 							</div>
 							<div class="col-md-10">
-								<input autocomplete="false" class="f_s_i" type="text"  name="sponser_id" value='Eremote' id="sponser_id" placeholder="Sponser ID"  data-toggle="tooltip" data-placement="right" title="Sponser ID if you have ." value="<?php if (isset($_GET['ref_id'])) { echo $rf_id;} ?>">
+								<input autocomplete="false" class="f_s_i" type="text"  name="sponser_id" value='Eremote' id="sponser_id" placeholder="Sponser ID"  data-toggle="tooltip" value="<?php if (isset($_GET['ref_id'])) { echo $rf_id;} ?>">
 							</div>
 							
 						</div>
 					</div>
-
-					<div class="form-group">
+					
+										<div class="form-group">
 						<div class="row">
 
 							<div class="col-md-2">
@@ -251,8 +249,8 @@ include("inc/header.php");
 							</div>
 
 							<div class="col-md-10">
-								<!-- <input type="text" name="s_name" id="s_name" class='f_s_i' style='background-color:#f5f5f5'> -->
-								<textarea name="s_name" id="s_name" class='f_s_i' cols="30" rows="10" style='background-color:#f5f5f5'></textarea>
+								<input type="text" name="s_name" id="s_name" class='f_s_i' style='background-color:#f5f5f5'>
+								<!-- <textarea name="s_name" id="s_name" class='f_s_i' cols="30" rows="10" style='background-color:#f5f5f5'></textarea> -->
 							</div>
 
 						</div>
@@ -266,7 +264,7 @@ include("inc/header.php");
 										<label for="firstname">First Name</label>
 									</div>
 									<div class="col-md-10">
-										<input class="f_s_i" type="text" name="firstname" id="firstname" placeholder="Your First Name" data-toggle="tooltip" data-placement="right" title="Your First Name">
+										<input class="f_s_i" type="text" name="firstname" id="firstname" placeholder="Your First Name">
 									</div>
 								</div>
 							</div>
@@ -276,7 +274,7 @@ include("inc/header.php");
 										<label for="lastname">Last Name</label>
 									</div>
 									<div class="col-md-10">
-										<input class="f_s_i" type="text" name="lastname" id="lastname" placeholder="Your Last Name" data-toggle="tooltip" data-placement="right" title="Your Last Name">
+										<input class="f_s_i" type="text" name="lastname" id="lastname" placeholder="Your Last Name" >
 									</div>
 								</div>
 							</div>
@@ -289,7 +287,7 @@ include("inc/header.php");
 									    <div class='input-grpup'>
 									       <div class="input-group-prepend">
                                             <div class="input-group-text">+91</div>
-											<input class="f_s_i" type="text" name="mobile" id="mobile" placeholder="Mobile No." data-toggle="tooltip" data-placement="right" title="Your Mobile No (do not include +91)" maxlength="10"  onkeypress="if(event.keyCode<48 || event.keyCode>57)event.returnValue=false;">
+											<input class="f_s_i" type="text" name="mobile" id="mobile" placeholder="Mobile No." maxlength="10"  onkeypress="if(event.keyCode<48 || event.keyCode>57)event.returnValue=false;">
 										 </div>
 										</div>
 									</div>
@@ -303,7 +301,7 @@ include("inc/header.php");
 									</div>
 									<div class="col-md-10">
 										<div class="ps">
-											<input  autocomplete="false" class="f_s_i" type="email" name="email" id="" placeholder="Email" data-toggle="tooltip" data-placement="right" title="Please type valid Email ID">
+											<input  autocomplete="false" class="f_s_i" type="email" name="email" id="" placeholder="Email">
 											<!-- <i class="fa fa-eye ps_show"></i>
 											<i class="fa fa-eye ps_hide"></i> -->
 										</div>
@@ -318,7 +316,7 @@ include("inc/header.php");
 									</div>
 									<div class="col-md-10">
 										<div class="ps">
-											<input autocomplete="false" class="f_s_i" type="password" name="pwd" id="pwd" placeholder="Password" data-toggle="tooltip" data-placement="right" title="Password must contain one letter and and a symbol and length should be more than 4 characters">
+											<input autocomplete="false" class="f_s_i" type="password" name="pwd" id="pwd" placeholder="Password">
 											<!-- <i class="fa fa-eye ps_show"></i>
 											<i class="fa fa-eye ps_hide"></i> -->
 										</div>
@@ -332,7 +330,7 @@ include("inc/header.php");
 									</div>
 									<div class="col-md-10">
 										<div class="ps">
-											<input class="f_s_i" type="password" name="c_pwd" id="c_pwd" placeholder="Confirm Password" data-toggle="tooltip" data-placement="right" title="Password should match ">
+											<input class="f_s_i" type="password" name="c_pwd" id="c_pwd" placeholder="Confirm Password" >
 											<!-- <i class="fa fa-eye ps_show"></i>
 											<i class="fa fa-eye-slash ps_hide" ></i> -->
 										</div>

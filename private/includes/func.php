@@ -45,6 +45,15 @@ function m_numb($value) {
 }
 
 
+function phoneNumbervalidation($mobile){
+if(preg_match('/^(\+[\d]{1,5}|0)?[7-9]\d{9}$/', $mobile,$matches)){
+// print_r($matches);
+return true;
+}
+else
+return false;
+}
+
 function sendto() {
     return $send_to = 'support@eremoteworld.com';
 }
@@ -287,5 +296,61 @@ $mail->send();
 //     </script>
 //     ";
 // }
+
+}
+
+
+
+
+// OTP Send
+
+function otp($mob, $mes) {
+    
+//Change your configurations here.
+//---------------------------------
+$username="eremote";
+$api_password="chacha@420";
+$sender="EREMOT";
+$domain="www.hellopatna.com";
+$priority="2";
+$method="POST";
+
+//---------------------------------
+	$username=urlencode($username);
+	// $password=urlencode($password);
+	$sender=urlencode($sender);
+	$mes=urlencode($mes);
+	
+	$parameters="username=$username&password=$api_password&senderid=$sender&to=$mob&message=$mes&route=$priority&flash=0&nonenglish=0";
+
+	if($method=="POST")
+	{
+		$opts = array(
+		  'http'=>array(
+			'method'=>"$method",
+			'content' => "$parameters",
+			'header'=>"Accept-language: en\r\n" .
+					  "Cookie: foo=bar\r\n"
+		  )
+		);
+
+		$context = stream_context_create($opts);
+
+		$fp = fopen("http://$domain/smsapi/sendsms?", "r", false, $context);
+	}
+	else
+	{
+		$fp = fopen("http://$domain/smsapi/sendsms?$parameters", "r");
+	}
+
+	$response = stream_get_contents($fp);
+	fpassthru($fp);
+	fclose($fp);
+
+
+	if($response=="")
+	echo "Process Failed, Please check domain, username and password.";
+	else
+	echo "$response";
 
 }

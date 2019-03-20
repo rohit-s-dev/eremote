@@ -7,7 +7,7 @@ if ( isset( $_POST['sponser_id'] ) ) {
 
     if ( !empty($spnser_id) ) {
 
-        $query = "SELECT * FROM user where userid LIKE '%$spnser_id%' LIMIT 2";
+        $query = "SELECT * FROM user where userid LIKE '%$spnser_id%' LIMIT 1";
         $queryQ = mysqli_query( $con , $query );
         $res = mysqli_num_rows($queryQ);
 
