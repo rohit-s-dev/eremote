@@ -77,7 +77,7 @@ include("inc/header.php");
 						
 						</script>";
 
-					}elseif(!phoneNumbervalidation($mobile)){
+					}/*elseif(!phoneNumbervalidation($mobile)){
 					    echo '
 						<script>
 						swal({
@@ -89,7 +89,7 @@ include("inc/header.php");
 						})
 						</script>
 						';
-					}  elseif ($d_h_s_id === 'Sponsered' && empty($sponser_id)) {
+					} */ elseif ($d_h_s_id === 'Sponsered' && empty($sponser_id)) {
 						echo '
 						<script>
 						swal({
