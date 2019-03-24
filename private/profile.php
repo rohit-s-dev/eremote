@@ -50,7 +50,7 @@ include("includes/ref_link.php");
                         $aadhar = escape($con, h($_POST['aadhar']));
 
                         // validation 
-                        if( empty($firstname)  || empty($lastname) || empty($m_numb) || empty($email) || empty($state) || empty($district) || empty($country) || empty($pincode) || empty($pancard)) {
+                        if( empty($firstname)  || empty($lastname) || empty($m_numb) ) {
                             echo "<script>
                                 swal({
                     
@@ -61,7 +61,7 @@ include("includes/ref_link.php");
                                 });
                             </script>";
                         
-                        }elseif (less_than($firstname , 3) || less_than($lastname , 3) || less_than($state , 3) || less_than($district , 3) || less_than($country , 3) || less_than($pincode , 3) ) {
+                        }elseif (less_than($firstname , 3) || less_than($lastname , 3) ) {
                             echo "<script>
                             swal({
                 
@@ -200,7 +200,7 @@ include("includes/ref_link.php");
                             if(empty($_SESSION['pancard']) ) {
                                 
                                 echo " 
-                                <input type='text' id='pancard' name='pancard'  placeholder='Pancard Number' value='' >";
+                                <input type='text' id='pancard' name='pancard'  placeholder='Pancard Number' value='' class='form-control' >";
                             
                             } else {
 

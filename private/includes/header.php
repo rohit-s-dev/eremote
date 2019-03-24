@@ -63,7 +63,7 @@ if(!isset($_SESSION['userid'])) {
     <!-- Custom Css -->
     <link href="css/style.css" rel="stylesheet">
 
-    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    
     <link href="css/themes/theme-indigo.css" rel="stylesheet" />
 
     <!-- Dashboard Style Sheet -->
@@ -71,9 +71,33 @@ if(!isset($_SESSION['userid'])) {
 
     <!-- Sweet Alert CSS -->
     <link rel="stylesheet" href="plugins/sweetalert/sweetalert.css">	
+
+    <!-- Jquery Core Js -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+
     <!--Sweet Alert JS -->
     <script src="plugins/sweetalert/sweetalert.min.js"></script>	
 
+    <!-- Jquery DataTable Plugin Js -->
+    <script src="plugins/jquery-datatable/jquery.dataTables.js"></script>
+
+    <script src="plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+
+    <script src="plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+
+    <script src="plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+
+    <script src="plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
+
+    <script src="plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+
+    <script src="plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+
+    <script src="plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+    
+    <script src="plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+
+    <script src="js/pages/tables/jquery-datatable.js"></script>
 
     <!-- <script type="text/javascript">
     var IDLE_TIMEOUT = 5 * 60;  // 1 minutes of inactivity
@@ -99,6 +123,7 @@ if(!isset($_SESSION['userid'])) {
         }
     }
 </script> -->
+
 </head>
 
 <body class="theme-indigo">

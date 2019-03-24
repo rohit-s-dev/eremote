@@ -42,8 +42,6 @@
     <!-- Demo Js -->
     <script src="js/demo.js"></script>
 
-    <!-- App js -->
-    <script src="js/app.js"></script>
 </body>
 
 </html>

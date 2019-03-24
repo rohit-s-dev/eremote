@@ -227,11 +227,6 @@ function pp($tmp_file, $file_name, $file_sz, $w, $h, $d, $u_id, $con, $v, $v_f) 
 // Mail Function
 
 
-// Pin Request 
-$pin_am = 3100;
-
-// Default Value
-$def_spon = 'Eremote';
 
 
 
@@ -354,3 +349,15 @@ $method="POST";
 	echo "$response";
 
 }
+
+
+// Pin Request 
+$pin_am = 3100;
+
+// Default Value
+$def_spon = 'Eremote';
+
+
+// Exp Date-------------------------------------------------------------------------
+
+$e_date =  date('z');

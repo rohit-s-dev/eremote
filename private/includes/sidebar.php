@@ -84,8 +84,8 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="">
-                                    <span>Genology</span>
+                                <a href="genealogy.php">
+                                    <span>Genealogy</span>
                                 </a>
                             </li>
                         </ul>

@@ -47,7 +47,6 @@ require_once("includes/initialize.php");
             <img src="images/e-remote-logo_footer.png" alt="">
         </div>
     </div>
-
     <div class="login-box">
         <div class="logo">
             <a href="javascript:void(0);">E<b>Remote</b><br><span>Admin Panel</span></a>
@@ -79,30 +78,58 @@ require_once("includes/initialize.php");
                         </div>
                     </div>
 
-                    <?php
                     
-                        if(isset($_POST['submit'])) {
-                            
-                            $userid = $_POST['userid'];
-                            $pass = $_POST['password'];
+                    <?php
+                     
+                     if(isset($_POST['submit'])) {
+                        
+                        $username_log =  $_POST['userid'];
+                        $password_log = $_POST['password'];
 
-                            if(empty($userid) || empty($pass) ) {
-                                echo "
-                                <script>
+                        // quering database
 
-                                    swal({
-                                        title: 'Error',
-                                        text: 'Fields Cannot Be Empty',
-                                        type: 'error'
-                                    });
+                        $sql = "SELECT * FROM `admin` WHERE `user_id` = '$username_log' ";
+                        $q = mysqli_query($con, $sql);
+                        $result = mysqli_num_rows($q);
+                        
+                        if($result < 1) {
 
-                                </script>
-                                ";
+                            echo "<div class='alert alert-danger'>
+                                     No userid found 
+                                </div>";
+
+                        } else {
+                            if($r = mysqli_fetch_assoc($q)) {
+
+                                $username = $r['user_id'];
+                                $password = $r['pass'];
+                                // $firstname = $r['firstname'];
+                                // $lastname = $r['lastname'];
+                               
+                                        
+                                // $hashedPwdCheck = password_verify($password_log, $password);
+
                             }
+                            
+                            // validation
+    
+                            if( $username_log == $username && $password_log == $password ) {
+    
+                                $_SESSION['user_id'] = $username;
+                               
+                                header("Location: home.php");
 
+                            } else {
+
+                                echo "<div class='alert alert-danger'>
+                                    username or password invalid
+                                </div>";
+                            
+                            }
                         }
-
-                    ?>
+                     } 
+                     
+                     ?>
 
                     <div class="row m-t-15 m-b--20">
                         <div class="col-xs-6 align-right">

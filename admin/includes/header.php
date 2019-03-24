@@ -3,9 +3,9 @@ require_once("initialize.php");
 ?>
 <?php 
 
-// if(!isset($_SESSION['userid'])) {
-//     header("Location: index.php");
-// }
+if(!isset($_SESSION['user_id'])) {
+    header("Location: index.php");
+}
 
 ?>
 <!DOCTYPE html>
@@ -57,6 +57,8 @@ require_once("initialize.php");
     <!-- Jquery Core Js -->
     <script src="plugins/jquery/jquery.min.js"></script>
 
+    <!-- App js -->
+    <script src="js/app.js"></script>
     <!--Sweet Alert JS -->
     <script src="plugins/sweetalert/sweetalert.min.js"></script>	
 
@@ -85,6 +87,9 @@ require_once("initialize.php");
     <script src="plugins/light-gallery/js/lightgallery-all.js"></script>
 
     <script src="js/pages/medias/image-gallery.js"></script>
+    
+
+    
 
 </head>
 

@@ -49,7 +49,6 @@ include("inc/header.php");
 					$c_pwd = escape($con, h($_POST['c_pwd']));
 
 					$hashedpwd = password_hash($pwd, PASSWORD_DEFAULT);
-
 					$q = "SELECT * FROM user";
 					$q_r = mysqli_query($con, $q);
 
@@ -122,7 +121,7 @@ include("inc/header.php");
 
                             if ( $sp_res > 0 ) {
 
-                                $q_i = "INSERT INTO user(userid, firstname, lastname, password, m_numb, sponsered ) VALUES('$r_user_id', '$firstname', '$lastname', '$hashedpwd' , '$mobile' ,'$sponser_id')";
+                                $q_i = "INSERT INTO user(userid, firstname, lastname, joining_date, password, m_numb, sponsered ) VALUES('$r_user_id', '$firstname', '$lastname', now() , '$hashedpwd' , '$mobile' ,'$sponser_id')";
 
                                 $q_i_res = mysqli_query($con, $q_i);
     
@@ -165,7 +164,7 @@ include("inc/header.php");
 
                         } else {
 
-                            $q_i = "INSERT INTO user(userid, firstname, lastname, password, m_numb, sponsered ) VALUES('$r_user_id', '$firstname', '$lastname', '$hashedpwd' , '$mobile' ,'$sponser_id')";
+                            $q_i = "INSERT INTO user(userid, firstname, lastname, joining_date, password, m_numb, sponsered ) VALUES('$r_user_id', '$firstname', '$lastname', now() , '$hashedpwd' , '$mobile' ,'$sponser_id')";
 
                                 $q_i_res = mysqli_query($con, $q_i);
     

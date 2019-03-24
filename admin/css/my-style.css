@@ -224,3 +224,45 @@
     border-bottom: 1px solid #ffffff;
 }
 /* End Of Admin Panel Style */
+
+
+
+/* Pending Button Class */
+.pb {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: all .3s ease;
+}
+.pb::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(255, 0, 0);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: all .3s ease;
+    animation: pb_bg 1s ease-in infinite ;
+}
+
+@keyframes pb_bg {
+    0%{
+        background: rgba(255, 0, 0, 0.541);
+    }
+
+    50%{
+        background: rgba(255, 0, 0, 0.637);
+    }
+
+    60% {
+        background: rgba(255, 0, 0, 0.753);
+    }
+    80% {
+        background: rgba(255, 0, 0, 0.952);
+    }
+    100% {
+        background: rgba(255, 0, 0, 0.541);
+    }
+}

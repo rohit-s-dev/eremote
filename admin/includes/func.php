@@ -162,3 +162,12 @@ function pp($tmp_file, $file_name, $file_sz, $w, $h, $d, $u_id, $con, $v, $v_f) 
     }
 
 }
+
+// Pin Quantity
+function pin_quantity($amount) {
+    $pin = 3100;
+
+    $quantity = $amount / 3100;
+    return $quantity;
+
+}

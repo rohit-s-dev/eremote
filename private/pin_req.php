@@ -54,38 +54,37 @@ if ( isset( $_POST['prsub'] ) ) {
                 </script>";
 
             } else {
+                // Total Income Validation Of Total Income
+                $total_income_less = ($amount / $pin_am);
+                $total_income_lessNP = floor($total_income_less);
 
-                $pin_sq = "INSERT INTO pin_req (`user_id`, `email`, `amount` , `date` ) VALUES ('$uid', '$email', '$amount', now() ) ";
+                $total_income_lessAM = $total_income_lessNP * $pin_am;
+                $total_income_less = $ti - $total_income_lessAM;
+
+                $total_income_minus = "UPDATE user SET `total_inc` = '$total_income_less' WHERE `userid`  = '$uid' ";
+
+                $total_income_minusQ = mysqli_query( $con, $total_income_minus );
+
+                $pin_sq = "INSERT INTO pin_req (`user_id`, `email`, `amount` , `date` ) VALUES ('$uid', '$email', '$total_income_lessAM', now() ) ";
 
                 $pin_sqQ = mysqli_query( $con , $pin_sq);
 
-                if( $pin_sqQ ) {
+                if( $total_income_minusQ ) {
 
-                    // Total Income Validation Of Total Income
-                    $total_income_less = ($amount / $pin_am);
-                    $total_income_lessNP = floor($total_income_less);
-
-                    $total_income_lessAM = $total_income_lessNP * $pin_am;
-                    $total_income_less = $ti - $total_income_lessAM;
-
-                    $total_income_minus = "UPDATE user SET `total_inc` = '$total_income_less' WHERE `userid`  = '$uid' ";
-
-                    $total_income_minusQ = mysqli_query( $con, $total_income_minus );
-
-                    if ( $total_income_minusQ ) {
-
-                        echo "
-                            <script>
-                                swal({
-                                    title: 'Pin Request Sent',
-                                    type: 'success'
-                                });
-                            </script>
-                        ";
+                    if ( $pin_sq ) {
                 
                         $_SESSION['total_inc'] = $total_income_less;
+                        // sleep(2);
                         // header("Location: pin_req.php");
-
+                        
+                        echo "
+                        <script>
+                            swal({
+                                title: 'Pin Request Sent',
+                                type: 'success'
+                            });
+                        </script>
+                    ";
                     }
                 }
 
@@ -154,7 +153,84 @@ if ( isset( $_POST['prsub'] ) ) {
 
 
             <!-- Pin Request Tables -->
-            
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Requested Pin
+                    </h2>
+                </div>
+                <div class="body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                            <thead>
+                                <style>
+                                    th {
+                                        font-size: 1.2rem;
+                                    }
+                                </style>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Amount</th>
+                                    <th>Quantity</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php 
+                                
+                                $sql = "SELECT * FROM `pin_req` WHERE `user_id` = '$uid' ";
+                                $result = mysqli_query($con, $sql);
+
+                            while($row = mysqli_fetch_assoc( $result )) {
+
+                                $id = $row['id'];
+                                $email = $row['email'];
+                                $amount = $row['amount'];
+                                // $quantity = $row['quantity'];
+                                $status = $row['status'];
+                                $date = $row['date'];
+
+                            ?>
+                            <?php
+
+                            $p_q = $amount/$pin_am;
+                            $quantity = floor($p_q);
+                            
+                            ?>
+
+                            <tr>
+                                <td><?php echo $id; ?></td>
+
+                                <td><?php echo $amount; ?></td>
+
+                                <td><?php echo $quantity; ?></td>
+
+                                <td>
+                                    <?php 
+                                    
+                                    if($status == 'pending') {
+                                        $status = strtoupper($status);
+                                        echo "<button class='btn btn-warning'>$status</button>";
+                                    } elseif($status == 'done') {
+                                        $status = strtoupper($status);
+                                        echo "<button class='btn btn-success'>$status</button>";
+                                    }
+                                    
+                                    ?>
+                                </td>
+
+                                <td><?php echo $date; ?></td>
+                                
+                            </tr>
+                        
+                        <?php } ?>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
