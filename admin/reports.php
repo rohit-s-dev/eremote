@@ -35,7 +35,6 @@
             $sql_q = mysqli_query($con, $sql);
             // $result = mysqli_num_rows($sql_q);
 
-
                 if($sql_q) {
                     echo "<script>
                     swal({
