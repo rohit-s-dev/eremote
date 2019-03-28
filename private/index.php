@@ -136,7 +136,7 @@ require_once("includes/initialize.php");
                                 $_SESSION['exp-date'] = $exp_date;
                                 $_SESSION['total_inc'] = $total_inc;
                                 $_SESSION['level'] = $level;
-                                $_SESSION['added-by'] = $added_by;
+                                // $_SESSION['added-by'] = $added_by;
                                 $_SESSION['email'] = $email;
                                 $_SESSION['m_numb'] = $m_numb;
                                 $_SESSION['status'] = $status;
@@ -168,7 +168,7 @@ require_once("includes/initialize.php");
                         }
                      } 
                      
-                     ?>
+                    ?>
 
                     <div class="row m-t-15 m-b--20">
                         <div class="col-xs-6">
@@ -182,6 +182,7 @@ require_once("includes/initialize.php");
             </div>
         </div>
     </div>
+
 
     <!-- Jquery Core Js -->
     <script src="plugins/jquery/jquery.min.js"></script>

@@ -6,12 +6,19 @@ ob_start();
 // Session Start
 session_start();
 
+
+
 // default date timezone
 $timezone = date_default_timezone_set('Asia/Kolkata');
 
 //  files
 // function 
 require_once("func.php");
+
+
+// Clear Cache 
+// c_b();
+
 
 // random userid
 $r_user_id =  rand_user_id();

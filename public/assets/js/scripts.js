@@ -249,3 +249,9 @@ $(document).ready(function(){
 	});
 
 });
+
+$(document).ready(function(){
+
+	var d_h_s_id = $('#d_h_s_id').val();
+	console.log(d_h_s_id);
+});

@@ -57,6 +57,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="wallet.php">
+                            <i class="material-icons">account_balance_wallet</i>
+                            <span>Wallet</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="doc.php">
                             <i class="material-icons">list</i>
                             <span>Documents</span>
@@ -74,7 +80,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="total-downline.php">
                                     <span>Total Downline</span>
                                 </a>
                             </li>

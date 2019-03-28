@@ -33,9 +33,7 @@
 
     <!-- Sparkline Chart Plugin Js -->
     <script src="plugins/jquery-sparkline/jquery.sparkline.js"></script>
-    <!-- App js -->
-    <script src="js/app.js"></script>
-    <!-- Custom Js -->
+   
     <script src="js/admin.js"></script>
     <script src="js/pages/index.js"></script>
 

@@ -75,6 +75,10 @@ if(!isset($_SESSION['userid'])) {
     <!-- Jquery Core Js -->
     <script src="plugins/jquery/jquery.min.js"></script>
 
+    <!-- App js -->
+    <script src="js/app.js"></script>
+    
+    <!-- Custom Js -->
     <!--Sweet Alert JS -->
     <script src="plugins/sweetalert/sweetalert.min.js"></script>	
 

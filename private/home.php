@@ -106,17 +106,17 @@ if( $prResult   > 0 ) {
                         </div>
                     </div>
                 </div>
-                <!-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="info-box bg-blue hover-expand-effect">
                         <div class="icon">
                             <i class="material-icons">account_balance_wallet</i>
                         </div>
                         <div class="content">
-                            <div class="text">Total Income</div>
+                            <div class="text">Wallet</div>
                             <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
-                </div> -->
+                </div>
             </div>
             <!-- #END# Widgets -->
 

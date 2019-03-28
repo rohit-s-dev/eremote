@@ -49,6 +49,7 @@ include("inc/header.php");
 					$c_pwd = escape($con, h($_POST['c_pwd']));
 
 					$hashedpwd = password_hash($pwd, PASSWORD_DEFAULT);
+
 					$q = "SELECT * FROM user";
 					$q_r = mysqli_query($con, $q);
 
@@ -89,7 +90,7 @@ include("inc/header.php");
 						})
 						</script>
 						';
-					} */ elseif ($d_h_s_id === 'Sponsered' && empty($sponser_id)) {
+					}*/  elseif ($d_h_s_id == 'Sponsered' && empty($sponser_id)) {
 						echo '
 						<script>
 						swal({
@@ -112,7 +113,7 @@ include("inc/header.php");
 
 					}  else {
 
-						if ($d_h_s_id === 'Sponsered') {
+						if ($d_h_s_id == 'Sponsered') {
 
                             $sp_q = "SELECT userid FROM user WHERE userid = '$sponser_id' ";
                             $spQ = mysqli_query( $con, $sp_q );
@@ -121,32 +122,31 @@ include("inc/header.php");
 
                             if ( $sp_res > 0 ) {
 
-                                $q_i = "INSERT INTO user(userid, firstname, lastname, joining_date, password, m_numb, sponsered ) VALUES('$r_user_id', '$firstname', '$lastname', now() , '$hashedpwd' , '$mobile' ,'$sponser_id')";
+                                $q_i = "INSERT INTO user(userid, firstname, lastname, password, m_numb, joining_date, sponsered ) VALUES('$r_user_id', '$firstname', '$lastname', '$hashedpwd' , '$mobile' , now() , '$sponser_id' )";
 
                                 $q_i_res = mysqli_query($con, $q_i);
     
                                 if($q_i_res) {
                                 
-                                    $mob = $mobile;
-                                    $mes = "WELCOME TO EREMOTEWORLD   ,";
-                                    $mes .= "YOUR USER ID : $r_user_id   ," ;
-                                    $mes .= "YOUR SPONSER ID : $sponser_id   ," ;
-                                    $mes .= "YOUR PASS : $pwd  ";
-                                    
-                                    $m = otp($mob, wordwrap($mes, 70));
-                                    
-                                   
-                                        echo "<script>
-                                    
-                                        swal({
-                                            title: 'User Created',
-                                            text: 'Your User ID: $r_user_id Please Check Your Mobile ',
-                                            type: 'success',
-                                            button: 'OK'
-                                        });
-    
-									</script>";
-                                  
+                                $mob = $mobile;
+                                $mes = "WELCOME TO EREMOTEWORLD   ,";
+                                $mes .= "YOUR USER ID : $r_user_id   ," ;
+                                $mes .= "YOUR SPONSER ID : $sponser_id   ," ;
+                                $mes .= "YOUR PASS : $pwd  ";
+                                
+                                $m = otp($mob, wordwrap($mes, 70));
+                                
+                               
+                                    echo "<script>
+                                
+                                    swal({
+                                        title: 'User Created',
+                                        text: 'Your User ID: $r_user_id Please Check Your Mobile ',
+                                        type: 'success',
+                                        button: 'OK'
+                                    });
+
+								</script>";
 									
                                 }
                             } else {
@@ -164,7 +164,7 @@ include("inc/header.php");
 
                         } else {
 
-                            $q_i = "INSERT INTO user(userid, firstname, lastname, joining_date, password, m_numb, sponsered ) VALUES('$r_user_id', '$firstname', '$lastname', now() , '$hashedpwd' , '$mobile' ,'$sponser_id')";
+                            $q_i = "INSERT INTO user(userid, firstname, lastname, password, m_numb, joining_date, sponsered ) VALUES('$r_user_id', '$firstname', '$lastname', '$hashedpwd' , '$mobile' , now() , '$sponser_id')";
 
                                 $q_i_res = mysqli_query($con, $q_i);
     

@@ -55,7 +55,7 @@ if ( isset( $_POST['inactive'] ) ) {
         echo "
             <script>
                 swal({
-                    title: 'Activated',
+                    title: 'Inactivated',
                     type: 'success',
                     text: '$inacuid has been activated '
                 });
