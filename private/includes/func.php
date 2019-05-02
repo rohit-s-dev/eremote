@@ -232,25 +232,25 @@ function pp($tmp_file, $file_name, $file_sz, $w, $h, $d, $u_id, $con, $v, $v_f) 
 
 // Mailer Function
 
-function u_s($email, $body) {
+function u_s($email, $body, $subject) {
 $subject = "Your Details";
 $body ='';
 $body .='';
 // Enter Your Email Address Here To Receive Email
 $email_to = $email;
  
-$email_from = "test@utglobe.com"; // Enter Sender Email
-$sender_name = "Eremoteworld"; // Enter Sender Name
+$email_from = "admin@utglobe.com"; // Enter Sender Email
+$sender_name = "Utglobe"; // Enter Sender Name
 require("PHPMailer/PHPMailer/PHPMailerAutoload.php");
 $mail = new PHPMailer();
 $mail->IsSMTP();
-$mail->Host = "mail.eremoteworld.com"; // Enter Your Host/Mail Server
+$mail->Host = "mail.utglobe.com"; // Enter Your Host/Mail Server
 $mail->SMTPAuth = true;
-$mail->Username = "noreply@eremoteworld.com"; // Enter Sender Email
+$mail->Username = "admin@utglobe.com"; // Enter Sender Email
 $mail->Password = "Rohit@utsav1";
 //If SMTP requires TLS encryption then remove comment from below
 $mail->SMTPSecure = "tls";
-$mail->Port = 587;
+$mail->Port = 143;
 $mail->IsHTML(true);
 $mail->From = $email_from;
 $mail->FromName = $sender_name;
@@ -358,10 +358,22 @@ $pin_am = 3100;
 $def_spon = 'Eremote';
 
 
-// Exp Date-------------------------------------------------------------------------
+// Renewal Date-------------------------------------------------------------------------
 
-$e_date =  date('z');
+function ren_d($join_date) {
 
+    $join_date = date($join_date, mktime(0,0,0, date('m')+12, date('d')-1, date('Y')+1));
+
+    return $join_date;
+
+};
 
 
 // Clear Browser Cache
+
+
+
+// Eamil Password Reset Random Number 
+function e_rand(){
+    return  random_int(0, 8000);
+};

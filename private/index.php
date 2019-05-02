@@ -91,6 +91,7 @@ require_once("includes/initialize.php");
                             if($rows = mysqli_fetch_assoc($q)) {
 
                                 $username = $rows['userid'];
+                                
                                 $password = $rows['password'];
                                 $firstname = $rows['firstname'];
                                 $lastname = $rows['lastname'];
@@ -99,7 +100,7 @@ require_once("includes/initialize.php");
                                 $exp_date = $rows['exp_date'];
                                 $total_inc = $rows['total_inc'];
                                 $level = $rows['level'];
-                                $added_by = $rows['added_by'];
+                                
                                 $email = $rows['email'];
                                 $m_numb = $rows['m_numb'];
                                 $status = $rows['status'];
@@ -133,7 +134,7 @@ require_once("includes/initialize.php");
                                 $_SESSION['lastname'] = $lastname;
                                 $_SESSION['sponsered'] = $sponsered;
                                 $_SESSION['joining_date'] = $joining_date;
-                                $_SESSION['exp-date'] = $exp_date;
+                                $_SESSION['exp_date'] = $exp_date;
                                 $_SESSION['total_inc'] = $total_inc;
                                 $_SESSION['level'] = $level;
                                 // $_SESSION['added-by'] = $added_by;

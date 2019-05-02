@@ -31,7 +31,9 @@ include("inc/header.php");
 			<?php 
 				
 				if(isset($_POST['register'])) {
+
 					
+
 					$d_h_s_id = $_POST['d_h_s_id'];
 
 					$sponser_id = escape($con, h($_POST['sponser_id']));
@@ -47,6 +49,7 @@ include("inc/header.php");
 					$pwd = escape($con, h($_POST['pwd']));
 
 					$c_pwd = escape($con, h($_POST['c_pwd']));
+					
 
 					$hashedpwd = password_hash($pwd, PASSWORD_DEFAULT);
 
@@ -118,11 +121,12 @@ include("inc/header.php");
                             $sp_q = "SELECT userid FROM user WHERE userid = '$sponser_id' ";
                             $spQ = mysqli_query( $con, $sp_q );
 
-                            $sp_res = mysqli_num_rows($spQ);
+							$sp_res = mysqli_num_rows($spQ);
+							
 
                             if ( $sp_res > 0 ) {
 
-                                $q_i = "INSERT INTO user(userid, firstname, lastname, password, m_numb, joining_date, sponsered ) VALUES('$r_user_id', '$firstname', '$lastname', '$hashedpwd' , '$mobile' , now() , '$sponser_id' )";
+                                $q_i = "INSERT INTO user(userid, firstname, lastname, password, m_numb, joining_date, sponsered , exp_date) VALUES('$r_user_id', '$firstname', '$lastname', '$hashedpwd' , '$mobile' , now() , '$sponser_id' ,DATE_ADD(now(), INTERVAL 365 DAY) )";
 
                                 $q_i_res = mysqli_query($con, $q_i);
     
@@ -164,7 +168,7 @@ include("inc/header.php");
 
                         } else {
 
-                            $q_i = "INSERT INTO user(userid, firstname, lastname, password, m_numb, joining_date, sponsered ) VALUES('$r_user_id', '$firstname', '$lastname', '$hashedpwd' , '$mobile' , now() , '$sponser_id')";
+                            $q_i = "INSERT INTO user(userid, firstname, lastname, password, m_numb, joining_date, sponsered, exp_date ) VALUES('$r_user_id', '$firstname', '$lastname', '$hashedpwd' , '$mobile' , now() , '$sponser_id', DATE_ADD(now(), INTERVAL 365 DAY) )";
 
                                 $q_i_res = mysqli_query($con, $q_i);
     

@@ -163,7 +163,8 @@ if( $prResult   > 0 ) {
                                 </div>
                                 <div class="col-md-6">
                                     <?php 
-                                        echo $e_date;
+                                       $exp_date =  $_SESSION['exp_date'];
+                                        echo  substr($exp_date, 0, strpos($exp_date, ' '));
                                     ?>
                                 </div>
                             </div>

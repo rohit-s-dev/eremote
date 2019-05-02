@@ -233,7 +233,28 @@ include("inc/header.php");
 		
 		<!-- =====>> END Testimonials <<===== 
 		============================= --> 
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<img src="assets/prodducts/" alt="">
+			</div>
 
+			<div class="col-md-3">
+				<img src="assets/prodducts/" alt="">
+			</div>
+
+			<div class="col-md-3">
+				<img src="assets/prodducts/" alt="">
+			</div>
+
+			<div class="col-md-3">
+				<img src="assets/prodducts/" alt="">
+			</div>
+			
+		</div>
+	</div>
+</section>
 		<!-- =====>> F.A.Q <<===== 
 		============================= --> 
 		<section class="faq">
